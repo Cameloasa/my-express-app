@@ -1,44 +1,16 @@
-# My Express App 🚀
+# Docker Build example 🚀
+## Comands
+### Node commands
+2. node app.js
 
-A simple application built with **Express.js** and running inside a **Docker** container.
+### Docker commands 
 
----
+**Build**
+`docker build -t <name> .`
 
-## 📦 Requirements
+**Run with bind mounted volume**
 
-- [Node.js](https://nodejs.org/) (optional, for local run)
-- [Docker](https://www.docker.com/) (for containerized run)
-
----
-
-## ▶️ Run Locally
-
-1. Install dependencies:
-   ```bash
-   npm install
-
-2. Start the server:
-    ```bash
-   npm start
-   
-   or
-   
-   node app.js
-
-3. Open the app in your browser:
-👉 http://localhost:3000
-
-Run with Docker
-
-Build the image:
-
-docker build -t my-express-app .
-
-
-Run the container:
-
-docker run -p 3000:3000 my-express-app
-
-
-Open the app in your browser:
-👉 http://localhost:3000
+```
+docker run --name "bind-mounted-demo" -d -p 3000:3000 -v <local-folder>:/app <image-name>
+```
+_Obs!_ Image name must be last command
